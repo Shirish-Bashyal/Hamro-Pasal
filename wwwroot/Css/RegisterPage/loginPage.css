@@ -1,0 +1,127 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* height: 100%;
+    width:100%; */
+}
+
+h2 {
+    /* text-align: center; */
+    margin-top: 10%;
+    color: black;
+}
+
+p {
+    /* text-align: center; */
+    color: #939395;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    height: 90%;
+    border: 2px solid;
+    border-radius: 15px;
+    margin-top: 15%;
+    margin: 10%;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: #e7e7e7;
+}
+/* #Email{
+    padding:10px;
+    width:200px;
+    margin:10px;
+    width:120px;
+    height:30px;
+}
+#Password{
+    padding:10px;
+    margin:10px;
+    width:120px;
+    height:30px;
+} */
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #0e368e;
+    border: 1px solid #0e368e;
+    border-radius: 10px;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #0e368e;
+    border: 1px solid #0e368e;
+    border-radius: 10px;
+}
+
+.data {
+    margin-top: 5%;
+    margin: 5px;
+    padding: 22px;
+    color: #0e368e;
+}
+
+button {
+    position: relative;
+    /* display:flex; */
+    cursor: pointer;
+    /* padding: 5px 6px; */
+
+    border-radius: 15px;
+    font-weight: 600;
+    border: none;
+    color: #111111;
+    font: rgb(10, 10, 10);
+    background-color: #fafcfa;
+    border: 1px solid rgb(134, 131, 131);
+    margin: 10px;
+    margin-top: 10px;
+    /*     margin-bottom: 50px; */
+    /* margin-left:15%; */
+    width: 130px;
+    height: 5vh;
+}
+
+.buttondata {
+    margin-top: 1%;
+}
+
+input::placeholder {
+    color: #0b4e75;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.forget-password {
+    color: blue;
+    text-decoration: underline;
+    /* margin-left: 15px;
+     margin-bottom:50px; */
+}
+
+.form-group {
+    padding-bottom: 5rem;
+}
+
+.bottom-forget {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    flex-direction: column;
+}

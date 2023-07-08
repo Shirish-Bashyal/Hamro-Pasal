@@ -1,0 +1,57 @@
+﻿
+@model SigninDTO
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    @*<link rel="stylesheet" href="loginPage.css">*@
+   <link href="~/css/registerpage/loginpage.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="box">
+        <h2><i>Welcome Back</i></h2>
+        <p>Log in into your account.</p>
+
+       <div class="data">
+        <form asp-action="Signin">
+            <div class="data-01">
+                <label >
+                 <input asp-for="Email" type="email" id="Email" placeholder="Email">
+                </label>
+            </div>
+            <div class="data-02">
+                 <label >
+                    <input asp-for="Password" type="password" id="Password" placeholder="Password">
+                  </label>
+             </div>
+    <!-- <div class="data-03">
+        <label >
+            <input type="password" id="C-Password" placeholder=" Confirm Password">
+        </label>
+    </div>
+     -->
+                
+
+           <div class="buttom-forget">
+                <div class="buttondata">
+                    <label >
+                    <button type="submit" >Log in</button>
+                    </label>
+                </div>
+           </div>
+
+
+                <div class="form-group">
+                        <a href="#" class="forget-password">Forget password ?</a>
+                </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

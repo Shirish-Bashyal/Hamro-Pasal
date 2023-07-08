@@ -1,0 +1,78 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.all-elements {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    height: 90%;
+    border-radius: 15px;
+    margin-top: 35%;
+    margin: 10%;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+a {
+    text-decoration: none;
+}
+a{
+    position: relative;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    color: #0d0d0d;
+    background-color: #e8e8e8;
+    border: 1px solid rgb(134, 131, 131);
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 7vh;
+}
+
+.button-login {
+    margin-top: 1%;
+}
+
+.already-account {
+    color: blue;
+    text-decoration: underline;
+    margin-left: 15px;
+}
+
+.account {
+    margin-top: 5%;
+    margin: 5px;
+    padding: 22px;
+    color: #0e368e;
+}
+
+.profile-big-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .profile_pic img {
+        margin-top: 30px;
+    }
+
+#logo {
+    border: 2px solid;
+    border-radius: 198px;
+}

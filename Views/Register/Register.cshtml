@@ -1,0 +1,86 @@
+﻿
+@model RegisterDTO
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+<link href="~/css/registerpage/registerpage.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="whole">
+      <div class="box">
+          <h2><i>Create Account</i></h2>
+         <p>Set up your new account.</p>
+
+           <div class="data">
+              <form asp-action="Register" >
+                   <div class="data-01">
+                     <label >
+                       <input asp-for="Name" type="text" id="name" placeholder="Name">
+                      </label>
+                    </div>
+
+                     <div class="data-01">
+                     <label >
+                       <input asp-for="PhoneNumber" type="text" id="phonenumber" placeholder="PHone Number">
+                      </label>
+                    </div>
+
+                     <div class="data-01">
+                     <label >
+                       <input asp-for="Address" type="text" id="address" placeholder="Address">
+                      </label>
+                    </div>
+                     <div class="data-AboutMe">
+                     <label >
+                       <input asp-for="AboutMe" type="text" id="aboutme" placeholder="AboutMe">
+                      </label>
+                    </div>
+
+                   <div class="data-01">
+                     <label >
+                       <input asp-for="Email" type="email" id="Email" placeholder="Email">
+                      </label>
+                    </div>
+                  <div class="data-02">
+                        <label >
+                           <input asp-for="Password" type="password" id="Password" placeholder="Password">
+                         </label>
+                  </div>
+                   <div class="data-03">
+                        <label >
+                            <input asp-for="ConfirmPassword" type="password" id="C-Password" placeholder=" Confirm Password">
+                         </label>
+                  </div>
+    
+                   
+
+
+
+                  <div class="buttom-forget">
+                      <div class="buttondata">
+                           <label >
+                                <button type="submit">Sign Up</button>
+                            </label>
+                       </div>
+                 </div>
+                    
+
+              
+               </form>
+
+           </div>
+     </div>
+
+
+      
+      
+   </div>
+</body>
+</html>
+
+                         @*client side validation for the password and confirm password*@

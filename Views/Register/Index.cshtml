@@ -1,0 +1,41 @@
+﻿
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LogoPage</title>
+<link href="~/css/registerpage/logopage.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="all-elements">
+      <div class="profile-big-box">
+        <div class="profile_pic">
+         
+         <img src="~/main_logo.png"
+            alt="Profile Photo"
+            id="logo"
+            width="80%"
+            height="80%">
+          
+        </div>
+      </div>
+      <div class="account">
+        <div class="button-login">
+          <label>
+            <a asp-action="Register" type="submit"><i>Create an acccount</i></a>
+          </label>
+        </div>
+
+        <label>
+          <a asp-action="Signin"  type="submit"><i>Already have account ?</i></a>
+        </label>
+      </div>
+   </div>
+   
+  </body>
+</html>
