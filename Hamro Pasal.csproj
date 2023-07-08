@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="package-lock.json" />
+    <Content Remove="package.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
@@ -28,19 +33,12 @@
 	
 
   <ItemGroup>
-    <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\Css\HomePage\" />
-    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 
-	<ItemGroup>
-		<UpToDateCheckBuilt Include="wwwroot/Css/site.css" Set="Css" />
-		<UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
-	</ItemGroup>
+	
 
-	<Target Name="Tailwind" BeforeTargets="Build">
-		<Exec Command="npm run css:build"/>
-	</Target>
+	
 
 </Project>
