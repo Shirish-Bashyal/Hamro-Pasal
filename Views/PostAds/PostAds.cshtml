@@ -1,0 +1,150 @@
+﻿
+@model PostAdsDTO
+
+
+<section>
+            <div className="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
+                <div className='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
+                <div className='px-5'>Post your Ads</div>
+            </div>
+
+            {/*Category Choose*/}
+    <form asp-controller="PostAdsController" asp-action="PostAd">
+
+            <label class="block container mx-auto px-4 py-4">
+                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block  text-xl font-Inter font-semibold  text-slate-700">
+                    Select Category
+                </span>
+                <select asp-for="category" id="product" className='mt-1 px-2 py-1 h-10 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" '>
+                    <option value="volvo">Select Category</option>
+                    <option value="saab">Fashion</option>
+                    <option value="opel">Gagets</option>
+                    <option value="audi">Furniture</option>
+                    <option value="audi">Bike</option>
+                    <option value="audi">Others</option>
+                </select>
+
+            </label>
+            <div className='container mx-auto px-4 py-2 text-xl font-Inter font-semibold  text-slate-700 '>Include Some Details</div>
+
+            {/*Ad Title*/}
+
+            <label class="block  container mx-auto px-4 ">
+                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                    Ad Title
+                </span>
+                <textarea asp-for="AdTitle" id="message" rows="4" class="block p-2.5 w-full h-16 text-sm font-Inter text-gray-900  bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500  rounded-md sm:text-sm focus:ring-1" placeholder="Write your Title"></textarea>
+                <p class="mt-1  text-slate-600 text-sm">
+                    Mention the key features of your item (eg:brand, model, type)
+                </p>
+            </label>
+
+            {/*Description*/}
+
+            <label class="block  container mx-auto px-4 py-4">
+                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                    Description
+                </span>
+                <textarea asp-for="AdDescription" id="message" rows="4" class="block descriptionbox p-2.5 w-full h-36 text-sm font-Inter text-gray-900  bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500  rounded-md sm:text-sm focus:ring-1" placeholder="Add Description"></textarea>
+                <p class="mt-1  text-slate-600 text-sm">
+                    Include condition, feature and reason for selling
+                </p>
+            </label>
+
+
+            <div className="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
+                <div className='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
+                <div className='px-5'>Post your Ads</div>
+            </div>
+            <label class="block px-4 py-4">
+                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                    Set your price
+                </span>
+                <input asp-for="Price" type="number" name="number" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Nrp:350" />
+            </label>
+
+            <label class="block px-4 ">
+                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium py-2 text-slate-700">
+                    Upload Image
+                </span>
+                <span class="sr-only">Choose profile photo</span>
+                <input type="file" class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4 py-2
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "/>
+     <input type="file" class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4 py-2
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "/>
+     <input type="file" class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4 py-2
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "/>
+     <input type="file" class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4 py-2
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "/>
+
+            </label>
+            <label class="block px-4 py-3 phonedetails">
+                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                    Provide Sell's Contact
+                </span>
+                <input type="number" name="number" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+            </label>
+
+            <label class="block px-4 py-1 locationConfirm">
+                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                    Confirm your Location
+                </span>
+                <input @*asp-for=""*@  type="text" name="text" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Butwal" />
+            </label>   @* yaha chai drop down of city and state*@
+
+            <div className='flex justify-end py-2'>
+                <button class="bg-sky-500 hover:bg-sky-700  font-Inter text-white border-sky-500">
+                    Save
+                </button>
+
+            </div>
+
+
+          
+
+
+
+
+    </form>
+
+           @* <Link to="/UploadImg">
+            <div className='flex justify-end py-8'>
+                <button class="bg-sky-500 hover:bg-sky-700  font-Inter text-white border-sky-500">
+                    Save
+                </button>
+
+            </div>
+            </Link>
+
+
+            <div className='flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0'>
+                <div className='Home'><Link to="/"><i class="fa-solid fa-house"></i></Link></div>
+                <div className='ShoppingCart'><Link to="/Selling"><i class="fa-solid fa-cart-shopping"></i></Link></div>
+                <div className='Notification'><Link to="/Notification"><i class="fa-solid fa-bell"></i></Link></div>
+                <div className='Setting'><Link to="/Logopage"><i class="fa-solid fa-user"></i></Link></div>
+            </div>*@
+
+
+
+
+        </section>

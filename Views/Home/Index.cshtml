@@ -1,3 +1,45 @@
-﻿@{
+﻿@model IEnumerable<AdsFirstLookDTO>
+
+
+
+@{
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+
+
+
+
+
+
+
+<div  class="all_ads_box" >
+
+    @foreach(var item in Model )
+    {
+        <div  class="individual_ads" > 
+                      <div class="image_inside_ads">
+
+                             <img src="~/Images/noprofile.jpg" width=25 height=25 alt="..">
+                       </div>
+                   <div  class="ads_data">  
+                       <div class="ads_title"> 
+                           @Html.DisplayNameFor(model=>model.AdTitle):
+                            @Html.DisplayFor(modelItem => item.AdTitle )
+
+                        </div>
+
+                            <div class="ads_price"> 
+                    @Html.DisplayNameFor(model=>model.Price):
+                    @Html.DisplayFor(modelItem => item.Price )
+
+                            </div>
+
+
+
+                   </div>
+        </div>
+
+    }
+
+
+</div>

@@ -41,5 +41,19 @@ namespace Hamro_Pasal.Controllers
            
             return View(result);
         }
+
+
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult EditProfile()
+        {
+            return View();
+        }
     }
 }

@@ -14,6 +14,9 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <link rel="stylesheet" href="~/css/tailwind.css">
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -29,7 +32,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Hamro Pasal App</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  @*<script src="https://cdn.tailwindcss.com"></script>*@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,7 +50,7 @@
     @RenderBody()
         
      <div>
-      <div className='flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0'>
+      <div className="flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0">
         <div className='Home'><a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a></div>
         <div className='ShoppingCart'> <a asp-controller="Home" asp-action="ShoppingCart"><i class="fa-solid fa-cart-shopping"></i></a></div>
         <div className='Notification'> <a asp-controller="Home" asp-action="Notification"><i class="fa-solid fa-bell"></i></a></div>

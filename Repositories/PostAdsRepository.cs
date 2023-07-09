@@ -23,24 +23,28 @@ namespace Hamro_Pasal.Repositories
         {
             var postCategory = _context.tbl_category.Where(a => a.CategoryName == postDetails.category).FirstOrDefault();
 
-            var postLocation = new Location
-            {
-                City = postDetails.location.City,
-                State = postDetails.location.State,
-               // Neighbourhood = postDetails.location.Neighbourhood,
-            };
 
-            
-            _context.tbl_location.Add(postLocation);
-            _context.SaveChanges();
+            var PostLocation = _context.tbl_location.Where(a => a.State == postDetails.location.State && a.City == postDetails.location.City).FirstOrDefault();
+            //var postLocation = new Location
+            //{
+            //    City = postDetails.location.City,
+            //    State = postDetails.location.State,
+            //   // Neighbourhood = postDetails.location.Neighbourhood,
+            //};
+
+
+            // _context.tbl_location.Add(postLocation);
+            // _context.SaveChanges();
 
             var post = new UserAds
             {
-                AdTitle=postDetails.AdTitle,
-                AdDescription=postDetails.AdDescription,
-                Price=postDetails.Price,
-                Category_ad=postCategory,
-                CreatedDate=DateTime.Now,
+                AdTitle = postDetails.AdTitle,
+                AdDescription = postDetails.AdDescription,
+                Price = postDetails.Price,
+                Category_ad = postCategory,
+                CreatedDate = DateTime.Now,
+                // AdsAddress=postDetails.AdsAddress,
+              //  Ad_Location = PostLocation;
 
 
             };

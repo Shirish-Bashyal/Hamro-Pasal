@@ -103,9 +103,31 @@ namespace Hamro_Pasal.Controllers
             Response.Cookies.Append("User", result.Message, cookieOptions);
             //  Response.Cookies.Append("Role1", status.Role.ToString(), cookieOptions);
 
-           
+            var CheckUserCreated = _userInterface.CheckUserDetails(model.Email);
+            if (CheckUserCreated == true)
                 return RedirectToAction(actionName: "Index", controllerName: "Home");
+            else
+                return RedirectToAction(actionName: "CreateProfile", controllerName: "Register");
+
+
+
+
+
+        }
+
+        public IActionResult CreateProfile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateProfile(CreateProfileDTO profile)
+        {
+
             
+
+
+            return RedirectToAction(actionName: "Index", controllerName: "Home");
 
 
 

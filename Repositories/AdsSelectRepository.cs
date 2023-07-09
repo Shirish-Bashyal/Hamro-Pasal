@@ -26,7 +26,7 @@ namespace Hamro_Pasal.Repositories
 
 
 
-            throw new NotImplementedException();
+           
         }
     }
 }

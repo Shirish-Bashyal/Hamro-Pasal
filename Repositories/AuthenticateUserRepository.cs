@@ -29,8 +29,10 @@ namespace Hamro_Pasal.Repositories
         public bool CheckUserDetails(string Email)
         {
 
-           // var result=_context.tbl_user_details.Where(x => x.Email == Email).ToList();
-            throw new NotImplementedException();
+            var result=_context.tbl_user_details.Where(x => x.Email == Email).ToList();
+            if(result==null)
+                return false;
+            return true;
         }
 
 

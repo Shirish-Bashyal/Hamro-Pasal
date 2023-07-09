@@ -27,6 +27,7 @@ namespace Hamro_Pasal.Repositories
 
             var ads = _context.tbl_ads.Where(x => x.Ad_Location.City == location.City).OrderBy(r => Guid.NewGuid()).Take(10).Select(x => new AdsFirstLookDTO()
             {
+                Id = x.Id,
                 AdTitle = x.AdTitle,
                 Price = x.Price,
             }).ToList();   // k gareko vanda, database bata location same vako lai fetch gareko, ani random order ma rakheko guid use garera ani top 10 ligeko  ani mapping gareko;
@@ -47,6 +48,7 @@ namespace Hamro_Pasal.Repositories
 
                 var ads1 = _context.tbl_ads.OrderBy(r => Guid.NewGuid()).Take(10).Select(x => new AdsFirstLookDTO()
                 {
+                    Id= x.Id,
                     AdTitle = x.AdTitle,
                     Price = x.Price,
                 }).ToList();
