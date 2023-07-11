@@ -1,21 +1,23 @@
-﻿
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
 @model PostAdsDTO
 
 
 <section>
-            <div className="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
-                <div className='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
-                <div className='px-5'>Post your Ads</div>
+            <div class="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
+                <div class='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
+                <div class='px-5'>Post your Ads</div>
             </div>
 
-            {/*Category Choose*/}
+          @*  {/*Category Choose*/}*@
     <form asp-controller="PostAdsController" asp-action="PostAd">
 
             <label class="block container mx-auto px-4 py-4">
                 <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block  text-xl font-Inter font-semibold  text-slate-700">
                     Select Category
                 </span>
-                <select asp-for="category" id="product" className='mt-1 px-2 py-1 h-10 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" '>
+                <select asp-for="category" id="product" class='mt-1 px-2 py-1 h-10 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" '>
                     <option value="volvo">Select Category</option>
                     <option value="saab">Fashion</option>
                     <option value="opel">Gagets</option>
@@ -25,9 +27,9 @@
                 </select>
 
             </label>
-            <div className='container mx-auto px-4 py-2 text-xl font-Inter font-semibold  text-slate-700 '>Include Some Details</div>
+            <div class='container mx-auto px-4 py-2 text-xl font-Inter font-semibold  text-slate-700 '>Include Some Details</div>
 
-            {/*Ad Title*/}
+           @* {/*Ad Title*/}*@
 
             <label class="block  container mx-auto px-4 ">
                 <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
@@ -39,7 +41,7 @@
                 </p>
             </label>
 
-            {/*Description*/}
+          @*  {/*Description*/}*@
 
             <label class="block  container mx-auto px-4 py-4">
                 <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
@@ -52,10 +54,10 @@
             </label>
 
 
-            <div className="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
-                <div className='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
-                <div className='px-5'>Post your Ads</div>
-            </div>
+           @* <div class="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
+                <div class='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
+                <div class='px-5'>Post your Ads</div>
+            </div>*@
             <label class="block px-4 py-4">
                 <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
                     Set your price
@@ -112,7 +114,7 @@
                 <input @*asp-for=""*@  type="text" name="text" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Butwal" />
             </label>   @* yaha chai drop down of city and state*@
 
-            <div className='flex justify-end py-2'>
+            <div class='flex justify-end py-2'>
                 <button class="bg-sky-500 hover:bg-sky-700  font-Inter text-white border-sky-500">
                     Save
                 </button>
@@ -128,7 +130,7 @@
     </form>
 
            @* <Link to="/UploadImg">
-            <div className='flex justify-end py-8'>
+            <div class='flex justify-end py-8'>
                 <button class="bg-sky-500 hover:bg-sky-700  font-Inter text-white border-sky-500">
                     Save
                 </button>
@@ -137,11 +139,11 @@
             </Link>
 
 
-            <div className='flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0'>
-                <div className='Home'><Link to="/"><i class="fa-solid fa-house"></i></Link></div>
-                <div className='ShoppingCart'><Link to="/Selling"><i class="fa-solid fa-cart-shopping"></i></Link></div>
-                <div className='Notification'><Link to="/Notification"><i class="fa-solid fa-bell"></i></Link></div>
-                <div className='Setting'><Link to="/Logopage"><i class="fa-solid fa-user"></i></Link></div>
+            <div class='flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0'>
+                <div class='Home'><Link to="/"><i class="fa-solid fa-house"></i></Link></div>
+                <div class='ShoppingCart'><Link to="/Selling"><i class="fa-solid fa-cart-shopping"></i></Link></div>
+                <div class='Notification'><Link to="/Notification"><i class="fa-solid fa-bell"></i></Link></div>
+                <div class='Setting'><Link to="/Logopage"><i class="fa-solid fa-user"></i></Link></div>
             </div>*@
 
 

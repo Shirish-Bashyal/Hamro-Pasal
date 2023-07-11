@@ -22,8 +22,8 @@ namespace Hamro_Pasal.Controllers
         public IActionResult Index()// randomly ads select garne location select nahuda ani data fetch garne
         {
 
-            //var result = _homeInterface.GetAdsRandomly();
-            //return View(result);
+            var result = _homeInterface.GetAdsRandomly();
+            return View(result);
             return View();
         }
 

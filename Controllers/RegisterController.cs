@@ -17,11 +17,11 @@ namespace Hamro_Pasal.Controllers
         public IActionResult Index()
         {
             var user = Request.Cookies["User"];
-            if (user != null)
-            {
-                return RedirectToAction(actionName: "Index", controllerName: "Home");
+            //if (user != null)
+            //{
+            //    return RedirectToAction(actionName: "Index", controllerName: "Home");
 
-            }
+            //}
             return View();
         }
 

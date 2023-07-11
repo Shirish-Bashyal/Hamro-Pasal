@@ -1,34 +1,41 @@
-﻿<section>
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
 
-      <div className="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
-        <div className='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
-        <div className='px-5'>Post your Ads</div>
+<section>
+
+      <div class="w-full h-16  bg-slate-200 px-4 flex items-center font-Inter text-2xl font-semibold ">
+        <div class='px-1 text-xl '><i class="fa-solid fa-circle-left"></i></div>
+        <div class='px-5'>Post your Ads</div>
       </div>
-      <div className='px-3 py-3 flex justify-between font-Inter '>
+      <div class='px-3 py-3 flex justify-between font-Inter '>
         <div class="bg-gray-200 h-48 w-40  flex flex-col rounded-lg justify-center items-center border-2 border-stone-600 ">
-          <Link to='/Detailproduct'>
-          <p className='text-3xl text-pink-700 px-8'><i class="fa-solid fa-couch "></i></p>
-          <p className='font-Intern px-1 py-1 text-black text-xl leading-4'>Furniture</p></Link>
+         @* <Link to='/Detailproduct'>*@
+            <a asp-action="PostAd" type="submit">@*<i>Create an acccount</i>*@
+
+          <p class='text-3xl text-pink-700 px-8'><i class="fa-solid fa-couch "></i></p>
+          <p class='font-Intern px-1 py-1 text-black text-xl leading-4'>Furniture</p>@*</Link>*@</a>
 
 
         </div>
-        <Link to='/Detailproduct'>
+            <a asp-action="PostAd" type="submit">@*<i>Create an acccount</i>*@
+       @* <Link to='/Detailproduct'>*@
         <div class="bg-gray-200 h-48 w-40  flex flex-col rounded-lg justify-center items-center border-2 border-stone-600 ">
-          <p className='text-3xl text-green-500'><i class="fa-solid fa-mobile-screen"></i></p>
-          <p className='font-Intern px-1 py-1 text-black text-xl leading-4'>Gadgets</p>
+          <p class='text-3xl text-green-500'><i class="fa-solid fa-mobile-screen"></i></p>
+          <p class='font-Intern px-1 py-1 text-black text-xl leading-4'>Gadgets</p>
 
 
         </div>
-        </Link>
+       @* </Link>*@    </a>
 
 
       </div>
 
-      <div className='px-3  flex justify-between font-Inter'>
+      <div class='px-3  flex justify-between font-Inter'>
       <Link to='/Detailproduct'>
         <div class="bg-gray-200 h-48 w-40  flex flex-col rounded-lg justify-center items-center border-2 border-stone-600 ">
-          <p className='text-3xl text-indigo-500'><i class="fa-solid fa-shirt"></i></p>
-          <p className='font-Intern px-1 py-1 text-black text-xl leading-4'>Fashion</p>
+          <p class='text-3xl text-indigo-500'><i class="fa-solid fa-shirt"></i></p>
+          <p class='font-Intern px-1 py-1 text-black text-xl leading-4'>Fashion</p>
 
 
         </div>
@@ -36,18 +43,18 @@
 
         <Link to='/Detailproduct'>
         <div class="bg-gray-200 h-48 w-40  flex flex-col rounded-lg justify-center items-center border-2 border-stone-600">
-          <p className='text-3xl text-red-700'><i class="fa-solid fa-ellipsis"></i></p>
-          <p className='font-Intern px-1 py-1 text-black text-xl leading-4'>Others</p>
+          <p class='text-3xl text-red-700'><i class="fa-solid fa-ellipsis"></i></p>
+          <p class='font-Intern px-1 py-1 text-black text-xl leading-4'>Others</p>
 
 
         </div>
         </Link>
       </div>
       <div>
-        <div className='container mx-auto px-3 py-4'><img  className='object-fit h-32 w-full rounded-lg' src="~/Images/Salespoint.jpg" alt="sale_img" /></div>
+        <div class='container mx-auto px-3 py-4'><img  class='object-fit h-32 w-full rounded-lg' src="~/Images/Salespoint.jpg" alt="sale_img" /></div>
       </div>
       <div>
-        <div className='container mx-auto px-3 mt-0'><img  className='object-fit h-40 w-full rounded-lg' src="~/Images/socialmedia.jpg" alt="sale_img" /></div>
+        <div class='container mx-auto px-3 mt-0'><img  class='object-fit h-40 w-full rounded-lg' src="~/Images/socialmedia.jpg" alt="sale_img" /></div>
       </div>
 
      

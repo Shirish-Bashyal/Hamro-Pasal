@@ -19,6 +19,12 @@ namespace Hamro_Pasal.Controllers
             return View();
         }
 
+        public IActionResult PostAd()
+        {
+            return View();
+        }
+
+
 
 
 

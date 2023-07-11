@@ -13,15 +13,16 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-
     <link rel="stylesheet" href="~/css/tailwind.css">
+
+    @*<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />*@
+
 
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    @*<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />*@
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -50,11 +51,11 @@
     @RenderBody()
         
      <div>
-      <div className="flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0">
-        <div className='Home'><a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a></div>
-        <div className='ShoppingCart'> <a asp-controller="Home" asp-action="ShoppingCart"><i class="fa-solid fa-cart-shopping"></i></a></div>
-        <div className='Notification'> <a asp-controller="Home" asp-action="Notification"><i class="fa-solid fa-bell"></i></a></div>
-        <div className='Setting'> <a asp-controller="Home" asp-action="Setting"><i class="fa-solid fa-user"></i></a></div>
+      <div class="flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0">
+        <div class='Home'><a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a></div>
+        <div class='ShoppingCart'> <a asp-controller="Home" asp-action="ShoppingCart"><i class="fa-solid fa-cart-shopping"></i></a></div>
+        <div class='Notification'> <a asp-controller="Home" asp-action="Notification"><i class="fa-solid fa-bell"></i></a></div>
+        <div class='Setting'> <a asp-controller="Home" asp-action="Setting"><i class="fa-solid fa-user"></i></a></div>
       </div>
       </div>
   </main>
