@@ -8,13 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LogoPage</title>
+@*<link href="~/css/registerpage/logopage.css" rel="stylesheet" />*@
 <link href="~/css/registerpage/logopage.css" rel="stylesheet" />
-
   </head>
   <body>
     <div class="all-elements">
       <div class="profile-big-box">
-        <div class="profile_pic">
+        <div class="profile_pic"style="
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+">
          
          <img src="~/main_logo.png"
             alt="Profile Photo"
@@ -25,15 +29,17 @@
         </div>
       </div>
       <div class="account">
-        <div class="button-login">
+        <div class="button-login" style="padding:10px">
           <label>
             <a asp-action="Register" type="submit"><i>Create an acccount</i></a>
           </label>
         </div>
-
+        
+        <div class="button-login"> 
         <label>
           <a asp-action="Signin"  type="submit"><i>Already have account ?</i></a>
         </label>
+        </div>
       </div>
    </div>
    

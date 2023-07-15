@@ -26,5 +26,33 @@ namespace Hamro_Pasal.Controllers
 
             return View(result);
         }
+
+        public IActionResult EditAds(int id)
+        {
+            var result = _adsSelect.AdsDetails(id);
+
+            return View(result);
+        }
+
+        [HttpPost]
+        public IActionResult EditThisAds(int id)
+        {
+            return View();
+        }
+
+        
+        public IActionResult DeleteThisAds(int id)
+        {
+
+
+            var result=_adsSelect.DeleteAd(id);
+                return RedirectToAction(actionName: "GetMyAds", controllerName: "Home");
+
+        }
+
+
+
+
+
     }
 }

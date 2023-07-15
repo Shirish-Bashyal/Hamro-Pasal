@@ -36,6 +36,17 @@ p {
     align-items: center;
     background-color: #e7e7e7;
 }
+.ddaattaa {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #0e368e;
+    border: 1px solid #0e368e;
+    border-radius: 10px;
+}
+
 
 input[type=email] {
     width: 100%;

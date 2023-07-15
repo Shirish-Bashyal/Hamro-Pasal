@@ -17,6 +17,6 @@
       public   string AdsAddress { get; set; }
         public string AdByUser { get; set; }
         public string PhoneNumberOfSeller { get; set; }
-
+       // public DateTime Date { get; set; }
     }
 }

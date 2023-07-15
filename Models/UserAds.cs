@@ -10,6 +10,7 @@ namespace Hamro_Pasal.Models
         public string AdDescription { get; set; }
 
         public string? Price { get; set; }
+        public string AdAddress { get; set; }
 
        // public string PicturePath { get; set; }   // to save pictures uploaded by user about ads, need multiple pictures
 

@@ -34,18 +34,25 @@ namespace Hamro_Pasal.Controllers
             var user = Request.Cookies["User"];
             if (user == null)
             {
-                return RedirectToAction(actionName: "Signin", controllerName: "Register");
+                return RedirectToAction(actionName: "Index", controllerName: "Register");
 
             }
 
-            var result=_Ads.PostAds(adsDetails,user);
+            var result = _Ads.PostAds(adsDetails, user).Result;
 
 
 
 
 
 
-            return View();
+
+            //  return View();
+            if(result.IsSuccess==true)
+            return RedirectToAction(actionName: "Index", controllerName: "Home");
+
+            else
+                return View();
+
         }
     }
 }

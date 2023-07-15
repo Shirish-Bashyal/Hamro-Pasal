@@ -18,34 +18,47 @@
 
            <div class="data">
               <form asp-action="Register" >
-                   <div class="data-01">
+                   <div class="ddaattaa">
                      <label >
-                       <input asp-for="Name" type="text" id="name" placeholder="Name">
+                       <input asp-for="Name" style="border:none; type="text" id="name" placeholder="Name">
                       </label>
                     </div>
 
-                     <div class="data-01">
+                     <div class="ddaattaa">
                      <label >
-                       <input asp-for="PhoneNumber" type="text" id="phonenumber" placeholder="PHone Number">
+                       <input asp-for="PhoneNumber"style="border:none; type="text" id="phonenumber" placeholder="PHone Number">
                       </label>
                     </div>
 
-                     <div class="data-01">
+                     <div class="ddaattaa">
                      <label >
-                       <input asp-for="Address" type="text" id="address" placeholder="Address">
+                       <input asp-for="Address"style="border:none; type="text" id="address" placeholder="Address">
                       </label>
                     </div>
-                     <div class="data-AboutMe">
+                     @*<div class="data-AboutMe">
                      <label >
                        <input asp-for="AboutMe" type="text" id="aboutme" placeholder="AboutMe">
                       </label>
+                    </div>*@
+                     <div class="ddaattaa">
+                     <label >
+                       <input asp-for="AboutMe" style="border:none;type="text" id="Email" placeholder="About Me">
+                      </label>
                     </div>
 
-                   <div class="data-01">
+                   <div class="data-05">
                      <label >
                        <input asp-for="Email" type="email" id="Email" placeholder="Email">
                       </label>
                     </div>
+
+                   @*  <div class="data-01">
+                     <label >
+                       <input asp-for="Email" type="email" id="Email" placeholder="Email">
+                      </label>
+                    </div>*@
+
+
                   <div class="data-02">
                         <label >
                            <input asp-for="Password" type="password" id="Password" placeholder="Password">

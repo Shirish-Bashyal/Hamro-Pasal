@@ -24,12 +24,13 @@
           </div>
 
           <div class="details">
-              <form asp-action="EditProfile" >
-             <div class="details1">
-                  <div class="Info">
-                   <div class="Titleprofessional">Basic Info</div>
-                 <label for="FirstName">Name</label>
-                  <input asp-for="Name" type="text"  id="Name"
+              <form asp-action="EditProfile">
+
+
+            <div class="Info">
+              <div class="Titleprofessional">Basic Info</div>
+              <label for="FirstName">Name</label>
+              <input asp-for="Name" type="text"  id="Name"
                 maxlength="25"
                 required />
             </div>
@@ -48,59 +49,26 @@
               <input asp-for="Email"type="email"  id="Email"
                 maxlength="35" required />
             </div>
+
+
              <div class='flex justify-center py-4'>
-                <button  type="submit" class="bg-sky-500 hover:bg-sky-700 w-40 h-10    font-Inter text-white border-sky-500">
+                      <button  type="submit" class="bg-green-500 hover:bg-sky-700 w-full h-10 mb-2    font-Inter text-white border-sky-500">
                     Edit Profile
                 </button>
 
             </div>
 
-
-             
-
-          
-            </div>
-           
-
-
             </form>
-
-             <div class='flex justify-center py-4'>
-                <a asp-action="signout"  asp-controller="Register"  class="bg-sky-500 hover:bg-sky-700 w-40 h-10    font-Inter text-white border-sky-500">
-                    Sign Out
-                </a>
-
-            </div>
-
-
-             <div class='flex justify-center py-4'>
-                <a asp-action="DeleteUser" class="bg-sky-500 hover:bg-sky-700 w-40 h-10    font-Inter text-white border-sky-500">
-                    Delete User
-                </a>
-
-            </div>
-
-
-
-           
           </div>
-
-          
 
 
 
         </div>
 
 
-       
-
-
 
 
       </div>
-      
-    
-    
            
 
              

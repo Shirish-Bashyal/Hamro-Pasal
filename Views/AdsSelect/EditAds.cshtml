@@ -1,6 +1,11 @@
-﻿   
- @{
-Layout = "~/Views/Shared/Layout.cshtml";
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    Layout = "~/Views/Shared/Layout_without_Footer.cshtml";
 }
 
 @model AdsDetailDTO
@@ -20,7 +25,7 @@ Layout = "~/Views/Shared/Layout.cshtml";
         <div class="bg-white dark:bg-slate-900 rounded-lg px-6 py-5 ring-1 ring-slate-900/5 shadow-sm">
           <h3 class="text-slate-900 dark:text-white mt-2 text-xl font-medium  tracking-tight font-Inter">@Html.DisplayFor(model=>Model.AdTitle)</h3>
           <table class="table-auto text-slate-500 dark:text-slate-400 mt-2 text-sm font-Inter">
-           @* {/* <thead>
+                @* {/* <thead>
               <tr>
                 <th>Title</th>
                 <th>Feature</th>
@@ -31,7 +36,7 @@ Layout = "~/Views/Shared/Layout.cshtml";
                 <td></td>
                 <td> @Html.DisplayFor(modelItem=>Model.AdDescription)      </td>
               </tr>
-             @* <tr>
+                    @* <tr>
                 <td>Graphics:</td>
                 <td>Intel® Iris® Xe Graphics</td>
               </tr>
@@ -67,7 +72,7 @@ Layout = "~/Views/Shared/Layout.cshtml";
             <tbody>
               <tr>
                 <td>Name:</td>
-                       
+
                 <td> @Html.DisplayFor(modelItem => Model.AdByUser)</td>
               </tr>
               <tr>
@@ -93,19 +98,25 @@ Layout = "~/Views/Shared/Layout.cshtml";
       </div>
       <div class='px-3 '>
       <p class="mt-1  text-slate-600 text-sm">
-        Note: We recommend you to physically inspect the product before making payment. Avoid paying fees or advance payment to seller.
+        Note: We recommend you to physically inspect the product before making any changes.
       </p>
       </div>
 
        <div class='flex justify-center py-4'>
-                <button  type="submit" class="bg-green-500 hover:bg-sky-700 w-full h-10 mb-2    font-Inter text-white border-sky-500">
-                    Call
-                </button>
+                <a href="@Url.Action("EditThisAd", "AdsSelect", new { id = Model.Id })" class="bg-sky-500 hover:bg-sky-700 w-40 h-10    font-Inter text-white border-sky-500">
+                  Edit Ad
+                </a>
+                </div>
 
-            </div>
+       <div class='flex justify-center py-4'>
+                <a href="@Url.Action("DeleteThisAds", "AdsSelect", new { id = Model.Id })" class="bg-sky-500 hover:bg-sky-700 w-40 h-10    font-Inter text-white border-sky-500">
+                    Delete Ad
+                </a>
+                </div>
 
 
-           
+
+
 
 
     </section>

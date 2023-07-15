@@ -1,4 +1,5 @@
-﻿using Hamro_Pasal.Models;
+﻿using Hamro_Pasal.DTO;
+using Hamro_Pasal.Models;
 
 namespace Hamro_Pasal.Interfaces
 {
@@ -6,6 +7,9 @@ namespace Hamro_Pasal.Interfaces
     {
 
 
-        UserAds AdsDetails(int id);
+        AdsDetailDTO AdsDetails(int id);
+
+        bool DeleteAd(int id);
+
     }
 }

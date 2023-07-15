@@ -55,7 +55,7 @@ namespace Hamro_Pasal.Repositories
             var user = new Authenticate
             {
                 Email = model.Email,
-                UserName=model.Name,
+                UserName=model.Name.Replace(" ", string.Empty),
 
 
 

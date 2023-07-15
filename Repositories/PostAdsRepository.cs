@@ -19,12 +19,12 @@ namespace Hamro_Pasal.Repositories
             _context = context;
 
         }
-        public Task<UserManagerResponse> PostAds(PostAdsDTO postDetails,string user)
+        public async Task<UserManagerResponse> PostAds(PostAdsDTO postDetails,string user)
         {
             var postCategory = _context.tbl_category.Where(a => a.CategoryName == postDetails.category).FirstOrDefault();
 
 
-            var PostLocation = _context.tbl_location.Where(a => a.State == postDetails.location.State && a.City == postDetails.location.City).FirstOrDefault();
+            var PostLocation = _context.tbl_location.Where(a =>  a.City == postDetails.location.City).FirstOrDefault();
             //var postLocation = new Location
             //{
             //    City = postDetails.location.City,
@@ -43,12 +43,14 @@ namespace Hamro_Pasal.Repositories
                 Price = postDetails.Price,
                 Category_ad = postCategory,
                 CreatedDate = DateTime.Now,
-                // AdsAddress=postDetails.AdsAddress,
+                 AdAddress=postDetails.AdAddress,
               //  Ad_Location = PostLocation;
 
 
             };
             var handler = new JwtSecurityTokenHandler();
+            //trying
+            //var token = handler.ReadJwtToken(user.Replace("\0", "")); //as JwtSecurityToken;
             var jsonToken = handler.ReadToken(user) as JwtSecurityToken;
             var claims = jsonToken.Claims;
            // var userId = claims.FirstOrDefault(c => c.Type == "Email")?.Value;
@@ -61,12 +63,20 @@ namespace Hamro_Pasal.Repositories
             post.Ad_by_user = adsBy;
             
 
-            var adsLocation=_context.tbl_location.Where(a=>a.City==postDetails.location.City && a.State==postDetails.location.State /*&& a.Neighbourhood==postDetails.location.Neighbourhood*/).FirstOrDefault();
+           // var adsLocation=_context.tbl_location.Where(a=>a.City==postDetails.location.City && a.State==postDetails.location.State /*&& a.Neighbourhood==postDetails.location.Neighbourhood*/).FirstOrDefault();
 
-            post.Ad_Location = adsLocation;
+            post.Ad_Location = PostLocation;
 
             _context.tbl_ads.Add(post);
-            _context.SaveChanges();
+           _context.SaveChanges();
+
+            return new UserManagerResponse
+            {
+                IsSuccess = true,
+                Message = "success"
+
+
+            };
 
 
 
@@ -74,7 +84,8 @@ namespace Hamro_Pasal.Repositories
 
 
 
-            throw new NotImplementedException();
+
+            //throw new NotImplementedException();
         }
 
         public bool save()

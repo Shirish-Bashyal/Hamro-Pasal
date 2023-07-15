@@ -17,11 +17,11 @@ namespace Hamro_Pasal.Controllers
         public IActionResult Index()
         {
             var user = Request.Cookies["User"];
-            //if (user != null)
-            //{
-            //    return RedirectToAction(actionName: "Index", controllerName: "Home");
+            if (user != null)
+            {
+                return RedirectToAction(actionName: "Index", controllerName: "Home");
 
-            //}
+            }
             return View();
         }
 
@@ -56,12 +56,16 @@ namespace Hamro_Pasal.Controllers
                 if (result.IsSuccess == true)
                 {
 
-                    ViewBag.Message=result.Message;
+                    //ViewBag.Message=result.Message;
+                    TempData["Sucess"] = result.Message;
+
                     return RedirectToAction(actionName: "Signin", controllerName: "Register");
 
                 }
 
-                ViewBag.Message = result.Message;
+                // ViewBag.Message = result.Message;
+                TempData["error"] = result.Message;
+
                 return View();
             }
 
@@ -91,7 +95,9 @@ namespace Hamro_Pasal.Controllers
             var result = _userInterface.SignInUserAsync(model).Result;
             if (result.IsSuccess != true)
             {
-                ViewBag.Message = result.Message;
+                TempData["error"] = result.Message;
+
+               // ViewBag.Message = result.Message;
                 return View();
             }
 
@@ -121,7 +127,7 @@ namespace Hamro_Pasal.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProfile(CreateProfileDTO profile)
+        public IActionResult CreateProfile(ProfileDTO profile)
         {
 
             

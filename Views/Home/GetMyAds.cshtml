@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@model IEnumerable<AdsFirstLookDTO>
+
+
+
+
+<section>
+    @*title part*@
+    <div class="container mx-auto px-4 py-2 text-xl font-Inter font-semibold ">
+        My Ads
+      </div>
+
+    @*my ads part*@
+
+    @*database part*@
+       <div class="px-3 py-3 flex  flex-col  justify-around">
+
+        @*<div  class="all_ads_box" >*@
+
+        @foreach (var item in Model)
+        {
+                    <div class="bg-gray-200 h-64 w-40 mt-2.5 mb-2.5 md:w-44 flex  rounded-lg ">
+                        <div class="bg-gray-200 h-64 w-40  md:w-44 flex  rounded-lg ">
+
+                    @*<div class="bg-gray-200 h-48 w-40 md:w-48 flex  rounded-lg ">*@
+                    @*change the source to databse*@
+                    @*<a asp-controller="AdsSelectController" asp-action="Index" asp-route="@item.Id">*@
+                              <a href="@Url.Action("EditAds", "AdsSelect", new { id = item.Id })">
+            <!-- Your content here -->
+                        @*</a>*@
+
+                        <img
+                        class="object-fit h-48 w-80 rounded-t-lg "
+                               src="~/images/Sofa.jpg"    
+                                  alt="sofa_img"
+                                             />
+                            <p class="font-Intern px-1 py-1 text-black text-xl leading-4">
+                            @Html.DisplayFor(modelItem => item.AdTitle )
+                           </p>
+
+                               <div class="flex justify-between leading-3">
+                                     <p class="px-1 text-lg py-1 text-red-500">
+                                       Nrp: @Html.DisplayFor(modelItem => item.Price)
+                                    </p>
+                                           <p class="text-red-500 py-1 px-4 text-lg">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </p>
+                               </div>
+                       </a>
+
+
+
+
+                  </div>
+
+               </div>
+
+
+        }
+
+
+
+
+</div>
+
+    @*sales ad*@
+       <div>
+        <div class="container mx-auto px-3 ">
+          <img
+            class="object-fit h-36 w-full rounded-lg"
+            src=~/Images//Sales.jpg
+            alt="sale_img"
+          />
+        </div>
+      </div>
+
+
+
+
+
+</section>

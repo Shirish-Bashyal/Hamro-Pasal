@@ -7,7 +7,7 @@
         public string State { get; set; }   // use enums for this
         public string City { get; set; }   // use enums for this
 
-        public string Neighbourhood { get; set; }
+       // public string Neighbourhood { get; set; }
 
         public ICollection<UserAds> AllAds { get; set; }
 

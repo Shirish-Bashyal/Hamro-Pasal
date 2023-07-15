@@ -1,10 +1,10 @@
 ﻿namespace Hamro_Pasal.DTO
 {
-    public class CreateProfileDTO
+    public class ProfileDTO
     {
         public String Name { get; set; }
 
-        public String AboutMe { get; set; }
+        public String Email{ get; set; }
 
        
 

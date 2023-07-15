@@ -8,7 +8,23 @@ namespace Hamro_Pasal.Interfaces
 
         ICollection<AdsFirstLookDTO> GetAdsByLocation(Location location);
 
+        ICollection<AdsFirstLookDTO> GetAdsByLocation(Location location,string user);
+
+
         ICollection<AdsFirstLookDTO> GetAdsRandomly();
+
+        ICollection<AdsFirstLookDTO> GetAdsRandomly(string user);
+
+
+        ProfileDTO GetProfile(string user);
+
+        ProfileDTO EditProfile(ProfileDTO profile, string user);
+
+        bool DeleteUser(string user);
+        ICollection<AdsFirstLookDTO> GetMyAds(string user);
+
+        
+
 
     }
 }
