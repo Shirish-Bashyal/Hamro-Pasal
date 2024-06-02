@@ -16,11 +16,23 @@ namespace Hamro_Pasal.Controllers
 
         public IActionResult Index()
         {
+            var user = Request.Cookies["User"];
+             if(user==null)
+            {
+                return RedirectToAction(actionName: "Index", controllerName: "Register");
+
+            }
             return View();
         }
 
         public IActionResult PostAd()
         {
+            var user = Request.Cookies["User"];
+             if(user==null)
+            {
+                return RedirectToAction(actionName: "Index", controllerName: "Register");
+
+            }
             return View();
         }
 
@@ -32,11 +44,13 @@ namespace Hamro_Pasal.Controllers
         public IActionResult PostAd(PostAdsDTO adsDetails)
         {
             var user = Request.Cookies["User"];
-            if (user == null)
+             if(user==null)
             {
                 return RedirectToAction(actionName: "Index", controllerName: "Register");
 
             }
+
+
 
             var result = _Ads.PostAds(adsDetails, user).Result;
 
@@ -46,13 +60,22 @@ namespace Hamro_Pasal.Controllers
 
 
 
+
             //  return View();
-            if(result.IsSuccess==true)
-            return RedirectToAction(actionName: "Index", controllerName: "Home");
+            if (result.IsSuccess == true)
+            {
+                return RedirectToAction(actionName: "Index", controllerName: "Home");
+                TempData["success"] = "Ad is Posted";
+            }
+
 
             else
+            {
                 return View();
+                TempData["error"] = "error occured";
 
+
+            }
         }
     }
 }

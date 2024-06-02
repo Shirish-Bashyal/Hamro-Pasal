@@ -55,7 +55,9 @@ namespace Hamro_Pasal.Repositories
             var user = new Authenticate
             {
                 Email = model.Email,
-                UserName=model.Name.Replace(" ", string.Empty),
+                 UserName=model.Name.Replace(" ", string.Empty),
+                
+
 
 
 
@@ -65,13 +67,13 @@ namespace Hamro_Pasal.Repositories
             if (result.Succeeded)
             {
                 var userDetails = new UserDetails();
-                var userData=await _user.FindByEmailAsync(model.Email);
-                userDetails.PhoneNumber=model.PhoneNumber;
+                var userData = await _user.FindByEmailAsync(model.Email);
+                userDetails.PhoneNumber = model.PhoneNumber;
                 userDetails.Address = model.Address;
                 userDetails.Email = model.Email;
                 userDetails.AboutMe = model.AboutMe;
-                userDetails.Name= model.Name;
-                userDetails.UserData=userData;
+                userDetails.Name = model.Name;
+                userDetails.UserData = userData;
                 _context.tbl_user_details.Add(userDetails);
                 _context.SaveChanges();
 
@@ -87,10 +89,15 @@ namespace Hamro_Pasal.Repositories
             }
 
             else
+            {
+                
                 return new UserManagerResponse
                 {
                     IsSuccess = false,
+                    Message="User not created "
+
                 };
+            }
 
 
 
@@ -109,7 +116,7 @@ namespace Hamro_Pasal.Repositories
         {
             var user = await _user.FindByEmailAsync(model.Email);
 
-            if (user == null)
+             if (user == null)
             {
                 return new UserManagerResponse
                 {

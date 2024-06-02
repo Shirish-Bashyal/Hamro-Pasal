@@ -107,7 +107,7 @@ if (!app.Environment.IsDevelopment())
 
     app.MapControllerRoute(
         name: "my_route",
-        pattern: "{controller=Register}/{action=Index}/{id?}");
+        pattern: "{controller=Home}/{action=Index}/{id?}");
     
     app.MapRazorPages();
 

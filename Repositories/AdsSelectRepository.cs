@@ -41,6 +41,8 @@ namespace Hamro_Pasal.Repositories
                 CreatedDate=result.CreatedDate,
                 AdTitle=result.AdTitle,
                 Price=result.Price,
+                ImageData=result.Picture,
+                
 
             };
 
@@ -61,12 +63,12 @@ namespace Hamro_Pasal.Repositories
 
             _context.tbl_ads.Remove(result);
 
-            _context.SaveChanges();
-            return true;
+            var exitStatus = Convert.ToBoolean(_context.SaveChanges()) ? true : false;
+            return exitStatus;
 
 
 
-            
+
         }
     }
 }

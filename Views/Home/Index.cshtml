@@ -230,8 +230,8 @@
 
                     <img
                         class="object-fit h-48 w-80 rounded-t-lg "
-                               src="~/images/Sofa.jpg"    
-                                  alt="sofa_img"
+                               src="data:image/jpeg;base64,@Convert.ToBase64String(item.ImageData)"    
+                                  alt="image"
                                              />
                         <p class="font-Intern px-1 py-1 text-black text-xl leading-4">
                                    @Html.DisplayFor(modelItem => item.AdTitle )

@@ -17,7 +17,11 @@
 
 
       <div class="bg-cover bg-center px-2">
-        <img class='object-fit h-52 w-full rounded-lg ' src="~/Images/Laptop.jpg" alt="laptop_img" />
+        <img class='object-fit h-52 w-full rounded-lg ' 
+                               src="data:image/jpeg;base64,@Convert.ToBase64String(Model.ImageData)"    
+
+        
+        alt="laptop_img" />
       </div>
 
 

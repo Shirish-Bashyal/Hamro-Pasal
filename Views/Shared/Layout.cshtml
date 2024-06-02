@@ -51,20 +51,25 @@
 
 
   <main role="main">
+
+        @{
+            Html.RenderPartial("Notification");   
+        }
+      @*partial views here for notification*@
     @RenderBody()
       </main>
         
      <div>
       <div class="flex justify-around h-10 w-full bg-black text-slate-100 py-2 fixed bottom-0 left-0 right-0">
         <div class='Home'><a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i></a></div>
-        <div class='ShoppingCart'> <a asp-controller="PostAds" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a></div>
-        <div class='Notification'> <a asp-controller="Home" asp-action="GetMyAds"><i class="fa-solid fa-bell"></i></a></div>
+        <div class='ShoppingCart' > <a asp-controller="PostAds" asp-action="Index">  <b>SELL</b></a> </div>
+        <div class='Notification'> <a asp-controller="Home" asp-action="GetMyAds"><i class="fa-brands fa-adversal"></i></a></div>
         <div class='Setting'> <a asp-controller="Home" asp-action="Profile"><i class="fa-solid fa-user"></i></a></div>
       </div>
       </div>
 
 
-       <script src="~/lib/jquery/dist/jquery.min.js"></script>
+       <script src="~/lib/jquery/dist/jquery.min.js"></script>    @* <i class="fa-solid fa-store"></i>*@
    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>

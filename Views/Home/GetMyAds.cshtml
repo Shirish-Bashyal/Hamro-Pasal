@@ -15,7 +15,9 @@
     @*my ads part*@
 
     @*database part*@
-       <div class="px-3 py-3 flex  flex-col  justify-around">
+      @* <div class="px-3 py-3 flex  flex-col  justify-around">*@
+       <div class="px-3 py-3 flex  flex-row flex-wrap justify-around">
+
 
         @*<div  class="all_ads_box" >*@
 
@@ -33,7 +35,8 @@
 
                         <img
                         class="object-fit h-48 w-80 rounded-t-lg "
-                               src="~/images/Sofa.jpg"    
+                               src="data:image/jpeg;base64,@Convert.ToBase64String(item.ImageData)"    
+
                                   alt="sofa_img"
                                              />
                             <p class="font-Intern px-1 py-1 text-black text-xl leading-4">

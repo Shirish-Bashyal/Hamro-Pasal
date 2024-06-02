@@ -19,9 +19,14 @@ namespace Hamro_Pasal.Controllers
             var user = Request.Cookies["User"];
             if (user != null)
             {
+                TempData["success"] = "Already LoggedIn";
+
                 return RedirectToAction(actionName: "Index", controllerName: "Home");
 
             }
+           // TempData["success"] = "cjhbjcjcb";
+
+
             return View();
         }
 
@@ -36,44 +41,7 @@ namespace Hamro_Pasal.Controllers
 
 
 
-        [HttpPost]
-        public IActionResult Register(RegisterDTO model)
-        {
-            if (ModelState.IsValid)
-            {
-
-                //if(model.Password!=model.ConfirmPassword)
-                //{
-                //    ViewBag.Message = "Password and ConfirmPassword Doesnot match";
-                //    return View(model);
-                //}
-
-                
-               
-                
-               var result= _userInterface.RegisterUserAsync(model).Result;//.result returns the response of the function
-                // RedirectToAction(SiginIn);
-                if (result.IsSuccess == true)
-                {
-
-                    //ViewBag.Message=result.Message;
-                    TempData["Sucess"] = result.Message;
-
-                    return RedirectToAction(actionName: "Signin", controllerName: "Register");
-
-                }
-
-                // ViewBag.Message = result.Message;
-                TempData["error"] = result.Message;
-
-                return View();
-            }
-
-
-
-            return View();
-        }
-
+       
 
         [HttpGet]
 
@@ -110,6 +78,8 @@ namespace Hamro_Pasal.Controllers
             //  Response.Cookies.Append("Role1", status.Role.ToString(), cookieOptions);
 
             var CheckUserCreated = _userInterface.CheckUserDetails(model.Email);
+            //TempData["success"] = "Logged In";
+
             if (CheckUserCreated == true)
                 return RedirectToAction(actionName: "Index", controllerName: "Home");
             else

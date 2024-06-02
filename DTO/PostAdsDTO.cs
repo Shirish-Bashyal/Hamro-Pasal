@@ -10,9 +10,11 @@ namespace Hamro_Pasal.DTO
 
         public string? Price { get; set; }
 
-       // public string PicturePath { get; set; }
-   
-       public string category { get; set; }
+        // public string PicturePath { get; set; }
+
+        public IFormFile ImageFile { get; set; }
+
+        public string category { get; set; }
 
         public LocationDTO location { get; set; }
 

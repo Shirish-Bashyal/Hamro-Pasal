@@ -25,55 +25,68 @@ namespace Hamro_Pasal.Repositories
 
 
             var PostLocation = _context.tbl_location.Where(a =>  a.City == postDetails.location.City).FirstOrDefault();
-            //var postLocation = new Location
-            //{
-            //    City = postDetails.location.City,
-            //    State = postDetails.location.State,
-            //   // Neighbourhood = postDetails.location.Neighbourhood,
-            //};
 
 
-            // _context.tbl_location.Add(postLocation);
-            // _context.SaveChanges();
-
-            var post = new UserAds
+            if (postDetails.ImageFile != null && postDetails.ImageFile.Length > 0)
             {
-                AdTitle = postDetails.AdTitle,
-                AdDescription = postDetails.AdDescription,
-                Price = postDetails.Price,
-                Category_ad = postCategory,
-                CreatedDate = DateTime.Now,
-                 AdAddress=postDetails.AdAddress,
-              //  Ad_Location = PostLocation;
+                byte[] imageData;
+
+                using (var memoryStream = new MemoryStream())
+                {
+                    postDetails.ImageFile.CopyTo(memoryStream);
+                    imageData = memoryStream.ToArray();
+                }
 
 
-            };
-            var handler = new JwtSecurityTokenHandler();
-            //trying
-            //var token = handler.ReadJwtToken(user.Replace("\0", "")); //as JwtSecurityToken;
-            var jsonToken = handler.ReadToken(user) as JwtSecurityToken;
-            var claims = jsonToken.Claims;
-           // var userId = claims.FirstOrDefault(c => c.Type == "Email")?.Value;
+
+                var post = new UserAds
+                {
+                    AdTitle = postDetails.AdTitle,
+                    AdDescription = postDetails.AdDescription,
+                    Price = postDetails.Price,
+                    Category_ad = postCategory,
+                    CreatedDate = DateTime.Now,
+                    AdAddress = postDetails.AdAddress,
+                    Picture = imageData,
+                    //  Ad_Location = PostLocation;
 
 
-            // extract the user from the cookie using email in the cookie
-            var email_from_cookie = claims.FirstOrDefault(c => c.Type == "Email")?.Value;
-            var adsBy = _context.tbl_user_details.Where(a => a.Email == email_from_cookie).FirstOrDefault();
+                };
+                var handler = new JwtSecurityTokenHandler();
+                //trying
+                //var token = handler.ReadJwtToken(user.Replace("\0", "")); //as JwtSecurityToken;
+                var jsonToken = handler.ReadToken(user) as JwtSecurityToken;
+                var claims = jsonToken.Claims;
+                // var userId = claims.FirstOrDefault(c => c.Type == "Email")?.Value;
 
-            post.Ad_by_user = adsBy;
-            
 
-           // var adsLocation=_context.tbl_location.Where(a=>a.City==postDetails.location.City && a.State==postDetails.location.State /*&& a.Neighbourhood==postDetails.location.Neighbourhood*/).FirstOrDefault();
+                // extract the user from the cookie using email in the cookie
+                var email_from_cookie = claims.FirstOrDefault(c => c.Type == "Email")?.Value;
+                var adsBy = _context.tbl_user_details.Where(a => a.Email == email_from_cookie).FirstOrDefault();
 
-            post.Ad_Location = PostLocation;
+                post.Ad_by_user = adsBy;
 
-            _context.tbl_ads.Add(post);
-           _context.SaveChanges();
+
+                // var adsLocation=_context.tbl_location.Where(a=>a.City==postDetails.location.City && a.State==postDetails.location.State /*&& a.Neighbourhood==postDetails.location.Neighbourhood*/).FirstOrDefault();
+
+                post.Ad_Location = PostLocation;
+
+                _context.tbl_ads.Add(post);
+                _context.SaveChanges();
+
+                return new UserManagerResponse
+                {
+                    IsSuccess = true,
+                    Message = "success"
+
+
+                };
+            }
 
             return new UserManagerResponse
             {
-                IsSuccess = true,
-                Message = "success"
+                IsSuccess = false,
+                Message = "Failed to save the image"
 
 
             };
@@ -85,7 +98,6 @@ namespace Hamro_Pasal.Repositories
 
 
 
-            //throw new NotImplementedException();
         }
 
         public bool save()

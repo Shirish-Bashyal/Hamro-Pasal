@@ -35,6 +35,7 @@ namespace Hamro_Pasal.Repositories
                 Id = x.Id,
                 AdTitle = x.AdTitle,
                 Price = x.Price,
+                ImageData=x.Picture
             }).ToList();   // k gareko vanda, database bata location same vako lai fetch gareko, ani random order ma rakheko guid use garera ani top 10 ligeko  ani mapping gareko;
 
             var count = ads.Count();
@@ -57,6 +58,8 @@ namespace Hamro_Pasal.Repositories
                     Id= x.Id,
                     AdTitle = x.AdTitle,
                     Price = x.Price,
+                    ImageData = x.Picture
+
                 }).ToList();
 
 
@@ -112,6 +115,8 @@ namespace Hamro_Pasal.Repositories
                 Id=x.Id,
                 AdTitle = x.AdTitle,
                 Price = x.Price,
+                ImageData = x.Picture
+
             }).ToList();
 
             var count = ads.Count();
@@ -225,7 +230,10 @@ namespace Hamro_Pasal.Repositories
 
             var user1 = _userManager.FindByEmailAsync(email_from_cookie).Result;
            var result1= _userManager.DeleteAsync(user1).Result;
-            return true;
+            // var exitStatus = Convert.ToBoolean(_context.SaveChanges())?true : false;
+            _context.SaveChanges();
+            var exitStatus = true;
+            return exitStatus;
 
             
         }
@@ -251,6 +259,8 @@ namespace Hamro_Pasal.Repositories
                 Id = x.Id,
                 AdTitle = x.AdTitle,
                 Price = x.Price,
+                ImageData = x.Picture
+
             }).ToList();
 
             return ads;
@@ -278,6 +288,8 @@ namespace Hamro_Pasal.Repositories
                 Id = x.Id,
                 AdTitle = x.AdTitle,
                 Price = x.Price,
+                ImageData = x.Picture
+
             }).ToList();   // k gareko vanda, database bata location same vako lai fetch gareko, ani random order ma rakheko guid use garera ani top 10 ligeko  ani mapping gareko;
 
             var count = ads.Count();
@@ -296,6 +308,8 @@ namespace Hamro_Pasal.Repositories
                     Id = x.Id,
                     AdTitle = x.AdTitle,
                     Price = x.Price,
+                    ImageData = x.Picture
+
                 }).ToList();
 
 
@@ -355,6 +369,8 @@ namespace Hamro_Pasal.Repositories
                 Id = x.Id,
                 AdTitle = x.AdTitle,
                 Price = x.Price,
+                ImageData = x.Picture
+
             }).ToList();
 
             var count = ads.Count();

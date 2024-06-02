@@ -11,7 +11,7 @@ namespace Hamro_Pasal.Interfaces
         ICollection<AdsFirstLookDTO> GetAdsByLocation(Location location,string user);
 
 
-        ICollection<AdsFirstLookDTO> GetAdsRandomly();
+                             ICollection<AdsFirstLookDTO> GetAdsRandomly();
 
         ICollection<AdsFirstLookDTO> GetAdsRandomly(string user);
 
